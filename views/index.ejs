@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Push Notifications</title>
+        <!-- Custom styles for this template-->
+        <link href="/assets/css/sb-admin-2.css" rel="stylesheet">
+
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        
+    <div class="main-content">
+        <section class="section">
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                        <div class="card-header">
+                            <h4>Notification push de <%= test %> </h4>
+                        </div>
+                            <div class="card-body">
+                                <!--Affiche le champ pour la vente-->
+                                <div id="redirect_vente"></div>
+                                <div id="aff_confirm_vente" >
+                                    <form role="form" class="register-form" id="FormPushNotification" action="/" method="POST">
+                                        
+                                        <div id="nbre_nzela">
+
+                                            <% if (locals.error) { %>
+                                                <% if (error != undefined || error != '') { %>
+                                                    <div id="msg3" class="py-2 form-group col-md-12" style="background: #e74a3b; font-size: 1.2rem; font-weight: 600; padding: 10px 10px 10px 10px; color: floralwhite;">
+                                                        <%= error %>
+                                                    </div>
+                                                <% } %>
+                                            <% } else if (locals.success) { %>
+                                                <% if (success != undefined || success != '') { %>
+                                                    <div id="msg3" class="py-2 form-group col-md-12" style="background: #1cc88a; font-size: 1.2rem; font-weight: 600; padding: 10px 10px 10px 10px; color: floralwhite;">
+                                                        <%= success %>
+                                                    </div>
+                                                <% } %>
+                                            <% } %>
+
+
+                                            <div class="row" >
+                                                <div class="col-md-12 form-group">
+                                                    <label for="title" class="py-2">Titre de la notification</label>
+                                                    <input type="text" name="title" id="title" class="common-textarea form-control" placeholder="Titre de la notification" >
+                                                </div>
+                                                <div class="col-md-12 form-group">
+                                                    <label for="messagePush" class="py-2">Notification à envoyer au client</label>
+                                                    <textarea name="messagePush" id="messagePush" class="common-textarea form-control" rows="11" placeholder="Notification à envoyer"></textarea>
+                                                </div>
+                                                <div class="col-md-3" id="sub1">
+                                                    <input type="submit" value="Envoyer" class="btn btn-primary">
+                                                </div>         
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    </body>
+</html>

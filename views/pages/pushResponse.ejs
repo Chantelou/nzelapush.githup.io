@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Reponse Notifications</title>
+        <!-- Custom styles for this template-->
+        <link href="/assets/css/sb-admin-2.css" rel="stylesheet">
+
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        
+    <div class="main-content">
+        <section class="section">
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                        <div class="card-header">
+                            <h4><a href="/" style="text-decoration: none; color: #858796;"> Resultats des push envoyées par <%= test %> </a></h4>
+                        </div>
+                            <div class="card-body">
+                                <!--Affiche le champ pour la vente-->
+                                <div id="redirect_vente"></div>
+                                <div id="aff_confirm_vente" >
+                                    <form role="form" class="register-form">
+                                        
+                                        <div id="nbre_nzela2">
+                                            
+                                            <% if (locals.resultPush) { %>
+                                                <% if (resultPush != undefined || resultPush != '') { %>
+                                                  
+                                                        <div id="msg3" class="py-2 form-group col-md-12" style="background: #0d5e25 ; font-size: 1rem; font-weight: 300; padding: 10px 10px 10px 10px; color: floralwhite;">
+                                                            <%= resultPush %>
+                                                            <br>
+                                                        </div>
+                                                    
+                                                <% } %>
+                                            <% } %>
+                                               
+                                        </div>
+                                        <br/><br/>
+                                        <div id="nbre_nzela3">
+                                            
+                                            <% if (locals.errorPush) { %>
+                                                <% if (errorPush != undefined || errorPush != '') { %>
+                                                  
+                                                        <div id="msg3" class="py-2 form-group col-md-12" style="background: #a3435b ; font-size: 1rem; font-weight: 300; padding: 10px 10px 10px 10px; color: floralwhite;">
+                                                            <%= errorPush %>
+                                                            <br>
+                                                        </div>
+                                                    
+                                                <% } %>
+                                            <% } %>
+                                               
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    </body>
+</html>
